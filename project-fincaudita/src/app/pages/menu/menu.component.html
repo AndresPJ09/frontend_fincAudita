@@ -1,0 +1,34 @@
+<nav class="navbar">
+  <app-svgs></app-svgs>
+  <ul>
+    <li><a routerLink="/dashboard/home" routerLinkActive="active"><i class="fas fa-home"></i> Home</a></li>
+    <li *ngFor="let module of menu" class="accordion" [id]="module.modulo + 'Accordion'">
+      <div class="accordion-item">
+        <h2 class="accordion-header" [id]="module.modulo + 'Heading'">
+          <button class="accordion-button collapsed" type="button" 
+                  (click)="toggleAccordion(module.modulo)" 
+                  [attr.aria-expanded]="isAccordionOpen(module.modulo)" 
+                  [attr.aria-controls]="module.modulo + 'Collapse'">
+            <i [class]="module.moduloDescription"></i> {{ module.modulo }}
+          </button>
+        </h2>
+        <div #collapse [id]="module.modulo + 'Collapse'" 
+             class="accordion-collapse collapse" 
+             [attr.aria-labelledby]="module.modulo + 'Heading'"
+             [attr.data-bs-parent]="'#' + module.modulo + 'Accordion'">
+          <div class="accordion-body">
+            <ul class="list-group">
+              <li *ngFor="let view of module.views" class="list-group-item">
+                <a [routerLink]="'/dashboard'+view.route" routerLinkActive="active">
+                  <i [class]="view.description"></i> {{ view.name }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <a class="logout" (click)="logout()" routerLinkActive="active"><i class="fas fa-sign-out-alt"></i>Log out</a>
+</nav>
