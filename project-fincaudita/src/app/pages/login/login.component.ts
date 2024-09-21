@@ -1,17 +1,31 @@
+<<<<<<< HEAD
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import {Route, RouterModule } from '@angular/router';  // Import RouterModule
+=======
+// src/app/login/login.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 import Swal from 'sweetalert2';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../guard/auth.service'; // Asegúrate de importar AuthService
+<<<<<<< HEAD
+=======
+import { CommonEngine } from '@angular/ssr';
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 import { CommonModule } from '@angular/common';
 import { SvgsComponent } from '../svgs/svgs.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
+<<<<<<< HEAD
   imports: [FormsModule, HttpClientModule, CommonModule, RouterModule, SvgsComponent], // Add RouterModule
+=======
+  imports: [FormsModule, HttpClientModule, CommonModule, SvgsComponent],
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -24,6 +38,7 @@ export class LoginComponent {
   private apiUrl = 'http://localhost:9191/login'; 
 
   constructor(private http: HttpClient, private router: Router, private authService: AuthService) {}
+<<<<<<< HEAD
   
   togglePasswordVisibility() {
     const passwordInput = document.getElementById('password') as HTMLInputElement;
@@ -39,6 +54,8 @@ export class LoginComponent {
       icon?.classList.add('fa-eye');
     }
   }
+=======
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 
   onSubmit(form: NgForm): void {
     const loginData = { username: this.username, password: this.password };
@@ -56,7 +73,11 @@ export class LoginComponent {
             icon: 'success',
             confirmButtonText: 'Aceptar'
           }).then(() => {
+<<<<<<< HEAD
             this.router.navigate(['/dashboard/home']); 
+=======
+            this.router.navigate(['/dashboard']); 
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
           });
         } else {
           Swal.fire({

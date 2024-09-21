@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -6,10 +7,14 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 
 @Component({
   selector: 'app-qualification',
   standalone: true,
+<<<<<<< HEAD
   imports: [HttpClientModule, FormsModule, CommonModule, NgbTypeaheadModule],
   templateUrl: './qualification.component.html',
   styleUrls: ['./qualification.component.css']
@@ -156,4 +161,12 @@ export class QualificationComponent implements OnInit {
     const checklist = this.checklists.find(c => c.id === id);
     return checklist ? checklist.calification_total : '';
   }
+=======
+  imports: [],
+  templateUrl: './qualification.component.html',
+  styleUrl: './qualification.component.css'
+})
+export class QualificationComponent {
+
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 }

@@ -14,7 +14,11 @@ import Swal from 'sweetalert2';
 })
 export class SuppliesComponent {
   supplies: any[] = [];
+<<<<<<< HEAD
   supplie: any = { id: 0, name: '', description: '', code: '', price: 0, state: false };
+=======
+  supplie: any = { id: 0, name: '', description: '', code: '', price: 0, state: true };
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   isModalOpen = false;
 
   private apiUrl = 'http://localhost:9191/api/Supplies';
@@ -86,6 +90,10 @@ export class SuppliesComponent {
   }
 
   resetForm(): void {
+<<<<<<< HEAD
     this.supplie = { id: 0, name: '', description: '', code: '', price: 0, state: false };
+=======
+    this.supplie = { id: 0, name: '', description: '', code: '', price: 0, state: true };
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   }
 }

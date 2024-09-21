@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="nav-container">
   <ul class="nav-items">
     <!-- Notificaciones -->
@@ -75,6 +76,12 @@
     </li>
 
     <!-- Menú de Módulos con Acordeón -->
+=======
+<nav class="navbar">
+  <app-svgs></app-svgs>
+  <ul>
+    <li><a routerLink="/dashboard/home" routerLinkActive="active"><i class="fas fa-home"></i> Home</a></li>
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
     <li *ngFor="let module of menu" class="accordion" [id]="module.modulo + 'Accordion'">
       <div class="accordion-item">
         <h2 class="accordion-header" [id]="module.modulo + 'Heading'">
@@ -91,9 +98,14 @@
              [attr.data-bs-parent]="'#' + module.modulo + 'Accordion'">
           <div class="accordion-body">
             <ul class="list-group">
+<<<<<<< HEAD
               <!-- Vistas dentro del módulo -->
               <li *ngFor="let view of module.views" class="list-group-item">
                 <a [routerLink]="'/dashboard' + view.route" routerLinkActive="active">
+=======
+              <li *ngFor="let view of module.views" class="list-group-item">
+                <a [routerLink]="'/dashboard'+view.route" routerLinkActive="active">
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
                   <i [class]="view.description"></i> {{ view.name }}
                 </a>
               </li>
@@ -104,8 +116,12 @@
     </li>
   </ul>
 
+<<<<<<< HEAD
   <!-- Cerrar sesión -->
   <a class="logout" (click)="logout()" routerLinkActive="active">
     <i class="fas fa-sign-out-alt"></i> Cerrar sesión
   </a>
+=======
+  <a class="logout" (click)="logout()" routerLinkActive="active"><i class="fas fa-sign-out-alt"></i>Log out</a>
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 </nav>

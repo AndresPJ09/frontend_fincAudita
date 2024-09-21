@@ -1,13 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+=======
+import { FormsModule } from '@angular/forms';
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
+<<<<<<< HEAD
   imports: [FormsModule, CommonModule, HttpClientModule],
+=======
+  imports: [FormsModule, CommonModule],
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
@@ -22,7 +30,14 @@ export class CalendarComponent implements OnInit {
     'Julio ', 'Agosto ', 'Septiembre ', 'Octubre ', 'Noviembre ', 'Diciembre '
   ];
 
+<<<<<<< HEAD
   events: any[] = []; // Datos que provienen del endpoint
+=======
+  events: any[] = [
+    // Puedes agregar eventos para años futuros aquí
+  ];
+
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   event_title: string = '';
   event_date: string = '';
   event_theme: string = 'azul';
@@ -35,14 +50,23 @@ export class CalendarComponent implements OnInit {
   ];
 
   openEventModal: boolean = false;
+<<<<<<< HEAD
   editingEvent: any = null;
 
   constructor(private http: HttpClient) { }
+=======
+  editingEvent: any = null; // Propiedad para mantener el evento en edición
+
+  constructor() { }
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 
   ngOnInit(): void {
     this.initDate();
     this.getNoOfDays();
+<<<<<<< HEAD
     this.fetchEvents();
+=======
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   }
 
   initDate() {
@@ -60,6 +84,11 @@ export class CalendarComponent implements OnInit {
   getNoOfDays() {
     const daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
     const firstDayOfMonth = new Date(this.year, this.month, 1).getDay();
+<<<<<<< HEAD
+=======
+    
+    // Convert getDay() result to match the starting day of the week (Monday = 0, Sunday = 6)
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
     const dayOffset = (firstDayOfMonth === 0) ? 6 : firstDayOfMonth - 1;
 
     this.blankdays = Array(dayOffset).fill(0);
@@ -84,7 +113,20 @@ export class CalendarComponent implements OnInit {
     }
     this.getNoOfDays();
   }
+<<<<<<< HEAD
 
+=======
+  
+  changeYear(direction: string) {
+    if (direction === 'prev') {
+      this.year--;
+    } else {
+      this.year++;
+    }
+    this.getNoOfDays();
+  }
+  
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   showEventModal(date: number) {
     this.event_date = new Date(this.year, this.month, date).toDateString();
     this.openEventModal = true;
@@ -94,6 +136,7 @@ export class CalendarComponent implements OnInit {
     this.openEventModal = false;
     this.event_title = '';
     this.event_theme = 'azul';
+<<<<<<< HEAD
     this.editingEvent = '';
   }
 
@@ -174,14 +217,53 @@ export class CalendarComponent implements OnInit {
 
   editEvent(event: any) {
     this.editingEvent = event;
+=======
+    this.editingEvent = null; // Resetea la propiedad de edición al cerrar el modal
+  }
+
+  addEvent() {
+    if (this.event_title.trim()) {
+      if (this.editingEvent) {
+        // Si hay un evento en edición, actualiza el evento existente
+        this.editingEvent.event_title = this.event_title;
+        this.editingEvent.event_date = new Date(this.event_date);
+        this.editingEvent.event_theme = this.event_theme;
+        this.editingEvent = null; // Resetea la propiedad de edición
+      } else {
+        // Si no hay un evento en edición, agrega un nuevo evento
+        this.events.push({
+          event_date: new Date(this.event_date),
+          event_title: this.event_title,
+          event_theme: this.event_theme
+        });
+      }
+      this.closeEventModal();
+    }
+  }
+
+  deleteEvent(event: any) {
+    this.events = this.events.filter(e => e !== event);
+  }
+  
+  editEvent(event: any) {
+    this.editingEvent = event; // Marca el evento que está siendo editado
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
     this.event_title = event.event_title;
     this.event_date = new Date(event.event_date).toDateString();
     this.event_theme = event.event_theme;
     this.openEventModal = true;
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   getEventsForDate(date: number): any[] {
     const targetDate = new Date(this.year, this.month, date).toDateString();
     return this.events.filter(event => new Date(event.event_date).toDateString() === targetDate);
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c

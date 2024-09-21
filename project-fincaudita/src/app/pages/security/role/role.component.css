@@ -184,6 +184,7 @@
     /* Red */
 }
 
+<<<<<<< HEAD
 /* Estilos del select múltiple */
 .form-control[multiple] {
     height: auto; /* Permite que el select expanda su altura */
@@ -195,3 +196,10 @@
     display: inline-block; /* Ajusta el tamaño del contenedor del select */
     width: 100%; /* Ajusta al ancho del contenedor */
 }
+=======
+.p-multiselect-item.p-highlight {
+    background-color: #44e32a !important; /* Verde para los elementos seleccionados */
+    color: #ffffff !important; /* Color de texto blanco para contraste */
+  }
+  
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c

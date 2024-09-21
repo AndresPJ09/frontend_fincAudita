@@ -10,11 +10,19 @@ import Swal from 'sweetalert2';
   standalone: true,
   imports: [HttpClientModule, FormsModule, CommonModule, NgbTypeaheadModule],
   templateUrl: './assessment-criteria.component.html',
+<<<<<<< HEAD
   styleUrls: ['./assessment-criteria.component.css']
 })
 export class AssessmentCriteriaComponent implements OnInit {
   assesments: any[] = [];
   assesment: any = { id: 0, name: '', type_criterian: '', rating_range: 0, state: false };
+=======
+  styleUrl: './assessment-criteria.component.css'
+})
+export class AssessmentCriteriaComponent {
+  assesments: any[] = [];
+  assesment: any = { id: 0, name: '', type_criterian: '', rating_range: 0, state: true };
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   isModalOpen = false;
 
   private apiUrl = 'http://localhost:9191/api/AssesmentCriteria';
@@ -51,13 +59,21 @@ export class AssessmentCriteriaComponent implements OnInit {
       this.http.post(this.apiUrl, this.assesment).subscribe(() => {
         this.getassesments();
         this.closeModal();
+<<<<<<< HEAD
         Swal.fire('Éxito', 'Criterio de evaluación creado con éxito.', 'success');
+=======
+        Swal.fire('Success', 'assesment created successfully!', 'success');
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
       });
     } else {
       this.http.put(this.apiUrl, this.assesment).subscribe(() => {
         this.getassesments();
         this.closeModal();
+<<<<<<< HEAD
         Swal.fire('Éxito', 'Criterio de evaluación actualizado con éxito.', 'success');
+=======
+        Swal.fire('Success', 'assesment updated successfully!', 'success');
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
       });
     }
   }
@@ -69,23 +85,40 @@ export class AssessmentCriteriaComponent implements OnInit {
 
   deleteassesment(id: number): void {
     Swal.fire({
+<<<<<<< HEAD
       title: '¿Estás seguro?',
       text: '¡No podrás revertir esto!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Sí, elimínalo',
       cancelButtonText: 'No, cancelar'
+=======
+      title: 'Are you sure?',
+      text: 'You won\'t be able to revert this!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!'
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
     }).then((result) => {
       if (result.isConfirmed) {
         this.http.delete(`${this.apiUrl}/${id}`).subscribe(() => {
           this.getassesments();
+<<<<<<< HEAD
           Swal.fire('Eliminado', 'El criterio de evaluación ha sido eliminado.', 'success');
+=======
+          Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
         });
       }
     });
   }
 
   resetForm(): void {
+<<<<<<< HEAD
     this.assesment = { id: 0, name: '', type_criterian: '', rating_range: 0, state: false };
+=======
+    this.assesment = { id: 0, name: '', description: '', code: '', price: 0, state: true };
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   }
 }

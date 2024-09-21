@@ -13,7 +13,11 @@ import Swal from 'sweetalert2';
 })
 export class CropComponent {
   crops: any[] = [];
+<<<<<<< HEAD
   crop: any = { id: 0, name: '', description: '', code: '', state: false };
+=======
+  crop: any = { id: 0, name: '', description: '', code: '', state: true };
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   isModalOpen = false;
 
   private apiUrl = 'http://localhost:9191/api/Crop';
@@ -87,6 +91,10 @@ export class CropComponent {
 
 
   resetForm(): void {
+<<<<<<< HEAD
     this.crop = { id: 0, name: '', description: '', code: '', state: false};
+=======
+    this.crop = { id: 0, name: '', description: '', code: '', state: true};
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   }
 }

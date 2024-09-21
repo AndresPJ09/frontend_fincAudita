@@ -1,13 +1,18 @@
+<<<<<<< HEAD
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 
 @Component({
   selector: 'app-checklist',
   standalone: true,
+<<<<<<< HEAD
   imports: [HttpClientModule, FormsModule, CommonModule, NgbTypeaheadModule],
   templateUrl: './checklist.component.html',
   styleUrls: ['./checklist.component.css']
@@ -89,4 +94,12 @@ export class ChecklistComponent implements OnInit {
   resetForm(): void {
     this.checklist = { id: 0, code: '', calification_total: 0, state: false };
   }
+=======
+  imports: [],
+  templateUrl: './checklist.component.html',
+  styleUrl: './checklist.component.css'
+})
+export class ChecklistComponent {
+
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 }

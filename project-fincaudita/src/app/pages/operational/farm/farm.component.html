@@ -1,4 +1,5 @@
 <!-- Título con estilo -->
+<<<<<<< HEAD
 <h2 class="title">Lista de Fincas</h2>
 
 <!-- Botón a la derecha -->
@@ -9,6 +10,17 @@
     <div class="modal-content">
         <span class="close" (click)="closeModal()">&times;</span>
         <h2>{{ farm.id === 0 ? 'Agregar finca' : 'Editar finca' }}</h2>
+=======
+<h2 class="title">Lista de Farms</h2>
+
+<!-- Botón a la derecha -->
+<button class="btn btn-success add-btn" (click)="openModal()">Agregar nuevo <i class="fas fa-plus"></i></button>
+
+<div id="farmModal" class="modal" [ngClass]="{'show-modal': isModalOpen}">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>{{ farm.id === 0 ? 'Agregar Farm' : 'Editar Farm' }}</h2>
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 
         <hr class="modal-border">
 
@@ -17,6 +29,7 @@
 
             <div class="row">
                 <div class="col">
+<<<<<<< HEAD
                     <label for="Name">Nombre de la finca:</label>
                     <input type="text" class="form-control" id="Name" name="Name"
                         [(ngModel)]="farm.name" required>
@@ -38,10 +51,32 @@
                         [resultFormatter]="formatCity"
                         (selectItem)="onCitySelect($event)"
                         [ngModel]="getCityName(farm.cityId)"
+=======
+                    <label for="Name">Nombre del farm:</label>
+                    <input type="text" class="form-control" id="Name" name="Name" [(ngModel)]="farm.name" required>
+                </div>
+
+                <div class="col">
+                    <!-- Eliminar campo de descripción -->
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <label for="Department">Departamento:</label>
+                    <input type="text" class="form-control" id="Department" name="Department" 
+                        [ngbTypeahead]="searchDepartments" 
+                        [inputFormatter]="formatDepartment" 
+                        [resultFormatter]="formatDepartment" 
+                        (selectItem)="onDepartmentSelect($event)"
+                        [ngModel]="farm.departamentId ? getDepartmentName(farm.departamentId) : ''" 
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
                         required>
                 </div>
 
                 <div class="col">
+<<<<<<< HEAD
                     <label for="UserId">Usuario asignado:</label>
                     <input type="text" class="form-control" id="UserId" name="UserId" 
                         [ngbTypeahead]="searchUsers"
@@ -71,6 +106,19 @@
                         [(ngModel)]="farm.dimension" required>
                 </div>
             </div>
+=======
+                    <label for="User">Usuario:</label>
+                    <input type="text" class="form-control" id="User" name="User" 
+                        [ngbTypeahead]="searchUsers" 
+                        [inputFormatter]="formatUser" 
+                        [resultFormatter]="formatUser" 
+                        (selectItem)="onUserSelect($event)"
+                        [ngModel]="farm.userId ? getUserName(farm.userId) : ''" 
+                        required>
+                </div>
+            </div>
+            <br>
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 
             <div class="row">
                 <div class="col">
@@ -79,6 +127,7 @@
                         <input class="form-check-input" type="checkbox" id="State" name="State"
                             [(ngModel)]="farm.state">
                     </div>
+<<<<<<< HEAD
             <br>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
@@ -86,20 +135,39 @@
             </div>
         </div>
     </div>
+=======
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
         </form>
     </div>
 </div>
 
+<<<<<<< HEAD
 <!-- Tabla de Fincas -->
+=======
+<!-- Table of farms -->
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 <table *ngIf="farms.length > 0" class="table">
     <thead>
         <tr>
             <th>Nombre</th>
+<<<<<<< HEAD
             <th>Dirección</th>
             <th>Ciudad</th>
             <th>Usuario</th>
             <th>Cultivo</th>
             <th>Dimensión</th>
+=======
+            <th>Departamento</th>
+            <th>Usuario</th>
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
             <th>Estado</th>
             <th>Acciones</th>
         </tr>
@@ -107,11 +175,16 @@
     <tbody>
         <tr *ngFor="let farm of farms">
             <td>{{ farm.name }}</td>
+<<<<<<< HEAD
             <td>{{ farm.addres }}</td>
             <td>{{ getCityName(farm.cityId) }}</td>
             <td>{{ getUserName(farm.userId) }}</td>
             <td>{{ farm.cropName }}</td>
             <td>{{ farm.dimension }} ha</td>
+=======
+            <td>{{ getDepartmentName(farm.departamentId) }}</td>
+            <td>{{ getUserName(farm.userId) }}</td>
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
             <td>{{ farm.state ? 'Activo' : 'Inactivo' }}</td>
             <td>
                 <button class="btn-icon edit" (click)="editFarm(farm)" title="Editar">
@@ -124,6 +197,10 @@
         </tr>
     </tbody>
 </table>
+<<<<<<< HEAD
 
 <!-- Mensaje para cuando no haya fincas -->
 <p *ngIf="farms.length === 0">No se encontraron fincas.</p>
+=======
+<p *ngIf="farms.length === 0">No se encontraron farms.</p>
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c

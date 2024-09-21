@@ -17,7 +17,11 @@ import Swal from 'sweetalert2';
 export class DepartamentComponent {
 
   departaments: any[] = [];
+<<<<<<< HEAD
   departament: any = { id: 0, name: '', description: '', code: '', countryId: 0, state: false };
+=======
+  departament: any = { id: 0, name: '', description: '', code: '', countryId: 0, state: true };
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   countrys: any[] = [];
   isModalOpen = false;
 
@@ -128,6 +132,10 @@ export class DepartamentComponent {
   }
 
   resetForm(): void {
+<<<<<<< HEAD
     this.departament = { id: 0, name: '', description: '', code: '', countryId: 0, state: false };
+=======
+    this.departament = { id: 0, name: '', description: '', code: '', countryId: 0, state: true };
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   }
 }

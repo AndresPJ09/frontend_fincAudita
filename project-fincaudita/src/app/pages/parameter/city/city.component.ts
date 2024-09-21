@@ -79,7 +79,11 @@ export class CityComponent implements OnInit {
 
   onSubmit(form: NgForm): void {
     if (!this.city.departamentId) {
+<<<<<<< HEAD
       Swal.fire('Error', 'Debe seleccionar un departamento válido.', 'error');
+=======
+      Swal.fire('Error', 'Debe seleccionar un país válido.', 'error');
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
       return;
     }
   
@@ -87,13 +91,21 @@ export class CityComponent implements OnInit {
       this.http.post(this.apiUrl, this.city).subscribe(() => {
         this.getCities();
         this.closeModal();
+<<<<<<< HEAD
         Swal.fire('Éxito', 'Ciudad creada con éxito.', 'success');
+=======
+        Swal.fire('Success', 'City created successfully!', 'success');
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
       });
     } else {
       this.http.put(this.apiUrl, this.city).subscribe(() => {
         this.getCities();
         this.closeModal();
+<<<<<<< HEAD
         Swal.fire('Éxito', 'Ciudad actualizada con éxito.', 'success');
+=======
+        Swal.fire('Success', 'City updated successfully!', 'success');
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
       });
     }
   }
@@ -105,17 +117,30 @@ export class CityComponent implements OnInit {
 
   deleteCity(id: number): void {
     Swal.fire({
+<<<<<<< HEAD
       title: '¿Estás seguro?',
       text: '¡No podrás revertir esto!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Sí, eliminar',
       cancelButtonText: 'No, cancelar'
+=======
+      title: 'Are you sure?',
+      text: 'You won\'t be able to revert this!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!'
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
     }).then((result) => {
       if (result.isConfirmed) {
         this.http.delete(`${this.apiUrl}/${id}`).subscribe(() => {
           this.getCities();
+<<<<<<< HEAD
           Swal.fire('Eliminado', 'La ciudad ha sido eliminada.', 'success');
+=======
+          Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
         });
       }
     });
@@ -127,6 +152,10 @@ export class CityComponent implements OnInit {
   }
 
   resetForm(): void {
+<<<<<<< HEAD
     this.city = { id: 0, name: '', description: '', code: '', departamentId: 0, state: false };
+=======
+    this.city = { id: 0, name: '', description: '', code: '', departamentId: 0, state: true };
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
   }
 }

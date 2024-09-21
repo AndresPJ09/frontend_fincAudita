@@ -188,4 +188,14 @@
 .btn-icon.delete:hover {
     color: #ff0000;
     /* Red */
+<<<<<<< HEAD
 }
+=======
+}
+
+/* DataTables styles */
+.table {
+    width: 100%;
+    margin-top: 20px;
+  }
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c

@@ -177,4 +177,8 @@ export class UserComponent implements OnInit {
     const person = this.persons.find(per => per.id === personId);
     return person ? person.first_name : 'Unknown';
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c

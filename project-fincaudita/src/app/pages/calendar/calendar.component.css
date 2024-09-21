@@ -1,7 +1,11 @@
 /* Estilos generales */
 .container {
     max-width: 800px;
+<<<<<<< HEAD
     margin: 100px;
+=======
+    margin: 0 auto;
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
     padding: 2rem 0;
 }
 

@@ -1,17 +1,29 @@
 /* Fondo verde con degradado */
 .bg-green {
     background: linear-gradient(135deg, #00ff95, #96ff82);
+<<<<<<< HEAD
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+=======
+    min-height: 100vh; /* Para cubrir toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Añade un poco de padding para que en pantallas pequeñas no quede pegado a los bordes */
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 }
 
 /* Texto en verde */
 .text-green {
     color: #006c3c;
+<<<<<<< HEAD
     text-align: center;
+=======
+    text-align: center; /* Alinea el texto en el centro */
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 }
 
 /* Estilo para la imagen de fondo */
@@ -28,6 +40,10 @@
     padding: 20px;
 }
 
+<<<<<<< HEAD
+=======
+/* Para darle una capa de superposición */
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 .bg-image::before {
     content: '';
     position: absolute;
@@ -36,6 +52,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+<<<<<<< HEAD
     
 }
 
@@ -56,12 +73,31 @@
     box-shadow: 0px 12px 40px rgba(79, 210, 27, 0.3);
 }
 
+=======
+}
+
+/* Centrar contenido y asegurarse de que todo sea responsive */
+.login-container {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* SVGs */
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 app-svgs {
     margin-bottom: 20px;
     transform: translateY(-20px);
     display: block;
     margin-left: auto;
     margin-right: auto;
+<<<<<<< HEAD
     width: 100%;
     max-width: 150px;
 }
@@ -116,6 +152,21 @@ app-svgs {
 
     .btn-back {
         font-size: 12px;
+=======
+    width: 100%; /* Asegura que el SVG se ajuste a su contenedor */
+    max-width: 150px; /* Tamaño máximo para pantallas más grandes */
+}
+
+/* MEDIA QUERIES - Ajuste para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+        max-width: 90%; /* Más ancho en pantallas pequeñas */
+    }
+
+    app-svgs {
+        max-width: 100px; /* Reducir el tamaño del SVG en pantallas pequeñas */
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
     }
 }
 
@@ -131,6 +182,7 @@ app-svgs {
     app-svgs {
         max-width: 80px;
     }
+<<<<<<< HEAD
 
     .btn-back {
         font-size: 11px;
@@ -158,4 +210,6 @@ app-svgs {
 .btn-custom:active {
     transform: translateY(0); /* Devuelve el botón a su posición normal */
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+=======
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
 }

@@ -5,6 +5,7 @@
 <button class="btn btn-success add-btn" (click)="openModal()">Agregar nuevo <i class="fas fa-plus"></i></button>
 
 <div id="moduloModal" class="modal" [ngClass]="{'show-modal': isModalOpen}">
+<<<<<<< HEAD
     <div class="modal-content">
         <span class="close" (click)="closeModal()">&times;</span>
         <h2>{{ modulo.id === 0 ? 'Agregar Modulo' : 'Editar Modulo' }}</h2>
@@ -85,3 +86,81 @@
     </tbody>
 </table>
 <p *ngIf="modulos.length === 0">No se encontraron modulos.</p>
+=======
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>{{ modulo.id === 0 ? 'Agregar Modulo' : 'Editar Modulo' }}</h2>
+
+    <hr class="modal-border">
+
+    <form #moduloForm="ngForm" (ngSubmit)="onSubmit(moduloForm)">
+      <input type="hidden" name="id" [(ngModel)]="modulo.id">
+
+      <div class="row">
+        <div class="col">
+          <label for="Name">Nombre del modulo:</label>
+          <input type="text" class="form-control" id="Name" name="Name" [(ngModel)]="modulo.name" required>
+        </div>
+
+        <div class="col">
+          <label for="Description">Descripción:</label>
+          <input type="text" class="form-control" id="Description" name="Description"
+            [(ngModel)]="modulo.description" required>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col">
+          <label for="Position">Posición:</label>
+          <input type="text" class="form-control" id="Position" name="Position" [(ngModel)]="modulo.position"
+            required>
+        </div>
+
+        <div class="col">
+          <label for="State">Estado:</label>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="State" name="State"
+              [(ngModel)]="modulo.state">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Table of modules -->
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" *ngIf="modulos.length > 0" class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Posición</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let modulo of modulos">
+      <td>{{ modulo.name }}</td>
+      <td>{{ modulo.description }}</td>
+      <td>{{ modulo.position }}</td>
+      <td>{{ modulo.state ? 'Activo' : 'Inactivo' }}</td>
+      <td>
+        <button class="btn-icon edit" (click)="editModulo(modulo)" title="Editar">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button class="btn-icon delete" (click)="deleteModulo(modulo.id)" title="Eliminar">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p *ngIf="modulos.length === 0">No se encontraron modulos.</p>
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c

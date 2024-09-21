@@ -147,4 +147,9 @@ export class RoleComponent implements OnInit {
   resetForm(): void {
     this.role = { id: 0, name: '', description: '', views: [], state: true };
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 8f0fea395f43f4ae6773b19a925ccf13b8152c0c
